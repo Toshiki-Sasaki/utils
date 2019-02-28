@@ -1,6 +1,7 @@
 import dill
 import json
 import sys
+import os
 
 #i/o method
 def save_txt(data, savepath):
@@ -27,6 +28,12 @@ def read_dill(path):
 def read_json(path):
     with open(path, "rt") as f:
         return json.load(f)
+
+# directolies
+def check_path( path ):
+    if not os.path.exists( path ):
+        os.makedirs(path)
+        print('new directory "{}" was created.'.format( path ) )
 
 # debug
 def stop():
